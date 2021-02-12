@@ -11,7 +11,16 @@ function CheckIn() {
 }
 
 CheckIn ./docker13319
+CheckIn ../eng13319
 CheckIn ../eng13319api
+CheckIn ../tool13319
+CheckIn ../tool13319api
+CheckIn ../prod13319
+CheckIn ../prod13319api
+CheckIn ../gm13319
+CheckIn ../gm13319api
+CheckIn ../mailer13319
+CheckIn ../alarms13319
 
 
 
