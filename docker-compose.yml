@@ -1,0 +1,85 @@
+version: '3'
+
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./certs:/etc/nginx/certs
+    depends_on:
+      - react13319
+    networks:
+      - app-network
+  react13319:
+    image: brentgroves/react13319:0.13.dev
+    depends_on:
+      - app13319
+    container_name: react13319
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - VIRTUAL_HOST=$WEBAPP_HOST
+      - VIRTUAL_PORT=3000
+    networks:
+      - app-network
+  app13319:
+    image: brentgroves/app13319:0.13.prod
+    depends_on:
+      - db
+    container_name: app13319
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - MYSQL_HOSTNAME=db
+      - MYSQL_PORT=$MYSQL_PORT 
+      - MYSQL_USERNAME=$MYSQL_USERNAME
+      - MYSQL_PASSWORD=$MYSQL_PASSWORD
+      - MYSQL_DATABASE=$MYSQL_DATABASE
+      - MSSQL_USER=$MSSQL_USER
+      - MSSQL_PASSWORD=$MSSQL_PASSWORD
+      - MSSQL_DATABASE=$MSSQL_DATABASE
+      - MSSQL_SERVER=$MSSQL_SERVER
+      - KORS_USERNAME=$KORS_USERNAME
+      - KORS_PASSWORD=$KORS_PASSWORD
+      - KORS_DATABASE=$KORS_DATABASE
+      - KORS_SERVER=$KORS_SERVER
+      - FEATHERS_PORT=$FEATHERS_PORT
+      - OPCUA_ENDPOINT=$OPCUA_ENDPOINT
+      - MQTT_SERVER=mqtt2
+      - MQTT_PORT=$MQTT_PORT
+      - PROD_WSDL=$PROD_WSDL
+      - TEST_WSDL=$TEST_WSDL
+      - ALBION_USER=$ALBION_USER
+      - ALBION_PASSWORD=$ALBION_PASSWORD
+      - AVILLA_USER=$AVILLA_USER
+      - AVILLA_PASSWORD=$AVILLA_PASSWORD
+      - NODE_ENV=$NODE_ENV
+      - TZ=America/Fort_Wayne
+      - VIRTUAL_HOST=$WEBSERVICE_HOST
+      - VIRTUAL_PORT=3030
+    networks:
+      - app-network
+  db:
+    image: mysql:8.0.19
+    container_name: db
+    command: --default-authentication-plugin=mysql_native_password
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - MYSQL_DATABASE=$MYSQL_DATABASE
+      - MYSQL_ROOT_PASSWORD=$MYSQL_PASSWORD
+    networks:
+      - app-network
+  mqtt2:
+    image: eclipse-mosquitto:1.6.10
+    container_name: mqtt2
+    restart: unless-stopped
+    networks:
+      - app-network
+networks:
+  app-network:
+    driver: bridge
