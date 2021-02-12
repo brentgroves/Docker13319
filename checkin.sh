@@ -10,6 +10,7 @@ function CheckIn() {
     git push -u origin main
 }
 
+CheckIn ./docker13319
 CheckIn ../eng13319api
 
 
