@@ -23,7 +23,9 @@ RemoveNodeModules ../prod13319api
 RemoveNodeModules ../gm13319api
 
 RemoveNodeModules ../mailer13319
+RemoveNodeModules ../issue13319
 RemoveNodeModules ../alarms13319
+
 rm -rf ../tool13319/build
 rm -rf ../eng13319/build
 rm -rf ../prod13319/build
