@@ -25,6 +25,7 @@ RemoveNodeModules ../gm13319api
 RemoveNodeModules ../mailer13319
 RemoveNodeModules ../issue13319
 RemoveNodeModules ../task13319
+RemoveNodeModules ../docs13319
 RemoveNodeModules ../alarms13319
 
 rm -rf ../tool13319/build

@@ -20,7 +20,7 @@ CheckIn ../prod13319api
 CheckIn ../gm13319
 CheckIn ../gm13319api
 CheckIn ../mailer13319
-CheckIn ../doc13319
+CheckIn ../docs13319
 CheckIn ../task13319
 CheckIn ../alarms13319
 

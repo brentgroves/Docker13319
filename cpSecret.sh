@@ -17,7 +17,7 @@ function cpSecret() {
 }
 
 cpSecret task13319 /src/get_user_access_token.js  
-cpSecret doc13319 /src/AuthenticationProvider.js  
+cpSecret docs13319 /src/AuthenticationProvider.js  
 cpSecret mailer13319 /src/AuthenticationProvider.js  
 cpSecret Test13319 /axios/task/get_user_access_token.js  
 
