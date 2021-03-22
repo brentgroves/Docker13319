@@ -11,7 +11,7 @@ services:
     image: mysql:8.0.19
     # Container params  
     volumes:
-      # Sets the image and containers timezone to that of the host system
+      # Sets the image and containers timezone to that of the host system.
       - /etc/localtime:/etc/localtime:ro
       - /var/lib/volumes/mysql:/var/lib/mysql
       - /etc/volumes/mysql/conf.d:/etc/mysql/conf.d       
@@ -76,8 +76,6 @@ services:
     # Container params  
     stdin_open: true  
     volumes:
-      # Sets the image and containers timezone to that of the host system
-      - /etc/localtime:/etc/localtime:ro
       # must be absolute path
       - /home/brent/srcnode/App13319/eng13319api:/usr/src/app
       - eng_api_node_modules:/usr/src/app/node_modules      
@@ -120,8 +118,6 @@ services:
     # Container params  
     stdin_open: true  
     volumes:
-      # Sets the image and containers timezone to that of the host system
-      - /etc/localtime:/etc/localtime:ro
       # must be absolute path
       - /home/brent/srcnode/App13319/tool13319api:/usr/src/app
       - tool_api_node_modules:/usr/src/app/node_modules      
@@ -164,8 +160,6 @@ services:
     # Container params  
     stdin_open: true  
     volumes:
-      # Sets the image and containers timezone to that of the host system
-      - /etc/localtime:/etc/localtime:ro
       # must be absolute path
       - /home/brent/srcnode/App13319/prod13319api:/usr/src/app
       - prod_api_node_modules:/usr/src/app/node_modules      
@@ -208,8 +202,6 @@ services:
     # Container params  
     stdin_open: true  
     volumes:
-      # Sets the image and containers timezone to that of the host system
-      - /etc/localtime:/etc/localtime:ro
       # must be absolute path
       - /home/brent/srcnode/App13319/gm13319api:/usr/src/app
       - gm_api_node_modules:/usr/src/app/node_modules      
@@ -237,8 +229,6 @@ services:
     # Container params  
     stdin_open: true  
     volumes:
-      # Sets the image and containers timezone to that of the host system
-      - /etc/localtime:/etc/localtime:ro
       # must be absolute path
       - /home/brent/srcnode/App13319/tool13319:/usr/src/app
       - tool_node_modules:/usr/src/app/node_modules      
@@ -268,8 +258,6 @@ services:
     # Container params  
     stdin_open: true  
     volumes:
-      # Sets the image and containers timezone to that of the host system
-      - /etc/localtime:/etc/localtime:ro
       # must be absolute path
       - /home/brent/srcnode/App13319/eng13319:/usr/src/app
       - eng_node_modules:/usr/src/app/node_modules      
@@ -299,8 +287,6 @@ services:
     # Container params  
     stdin_open: true  
     volumes:
-      # Sets the image and containers timezone to that of the host system
-      - /etc/localtime:/etc/localtime:ro
       # must be absolute path
       - /home/brent/srcnode/App13319/prod13319:/usr/src/app
       - prod_node_modules:/usr/src/app/node_modules      
@@ -330,8 +316,6 @@ services:
     # Container params  
     stdin_open: true  
     volumes:
-      # Sets the image and containers timezone to that of the host system
-      - /etc/localtime:/etc/localtime:ro
       # must be absolute path
       - /home/brent/srcnode/App13319/gm13319:/usr/src/app
       - gm_node_modules:/usr/src/app/node_modules      
@@ -360,8 +344,6 @@ services:
     # Container params  
     stdin_open: true  
     volumes:
-      # Sets the image and containers timezone to that of the host system
-      - /etc/localtime:/etc/localtime:ro
       # must be absolute path
       - /home/brent/srcnode/App13319/alarms13319:/usr/src/app
       - alarms_node_modules:/usr/src/app/node_modules      
@@ -390,8 +372,6 @@ services:
     # Container params  
     stdin_open: true  
     volumes:
-      # Sets the image and containers timezone to that of the host system
-      - /etc/localtime:/etc/localtime:ro
       # must be absolute path
       - /home/brent/srcnode/App13319/mailer13319:/usr/src/app
       - mailer_node_modules:/usr/src/app/node_modules      
@@ -420,8 +400,6 @@ services:
     # Container params  
     stdin_open: true  
     volumes:
-      # Sets the image and containers timezone to that of the host system
-      - /etc/localtime:/etc/localtime:ro
       # must be absolute path
       - /home/brent/srcnode/App13319/docs13319:/usr/src/app
       - docs_node_modules:/usr/src/app/node_modules      
@@ -450,8 +428,6 @@ services:
     # Container params  
     stdin_open: true  
     volumes:
-      # Sets the image and containers timezone to that of the host system
-      - /etc/localtime:/etc/localtime:ro
       # must be absolute path
       - /home/brent/srcnode/App13319/task13319:/usr/src/app
       - task_node_modules:/usr/src/app/node_modules      
